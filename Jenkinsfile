@@ -47,12 +47,8 @@ pipeline {
           }
           steps {
             sh './mvnw verify'
-          }
-        }
-
-        stage('') {
-          steps {
             junit '**/target/surefire-reports/'
+            perfReport '**/target/jmeter/results/*'
           }
         }
 
