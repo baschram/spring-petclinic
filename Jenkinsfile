@@ -33,12 +33,7 @@ pipeline {
     stage('QA') {
       parallel {
         stage('Deploy') {
-          agent {
-            node {
-              label 'test'
-            }
-
-          }
+          agent any
           steps {
             sh './mvnw spring-boot:run </dev/null &>/dev/null &'
           }
