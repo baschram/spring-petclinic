@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'test'
+    }
+
+  }
   stages {
     stage('Compile') {
       steps {
@@ -9,12 +14,11 @@ pipeline {
 
     stage('Static Analysis') {
       steps {
-        sh '''./mvnw sonar:sonar 
--Dsonar.host.url=http://172.31.6.113:9000/ 
-
-
-
--Dsonar.projectKey=Petclinic -Dsonar.token=sqp_333d8be556cbc0a960d0a886641618ecff68d8f6'''
+        sh '''./mvnw clean verify sonar:sonar 
+  -Dsonar.projectKey=Petclinic 
+  -Dsonar.projectName=\'Petclinic\' 
+-Dsonar.host.url=http://3.22.77.50:9000 
+  -Dsonar.token=sqp_af9f2cbcf5210efa41bff5e3c199280b3c410c2b'''
       }
     }
 
