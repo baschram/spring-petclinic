@@ -10,10 +10,10 @@ pipeline {
     stage('Static Analysis') {
       steps {
         sh '''./mvnw sonar:sonar 
-  -Dsonar.projectKey=Petclinic 
-  -Dsonar.projectName=\'Petclinic\' 
--Dsonar.host.url=http://172.31.6.113:9000/ 
-  -Dsonar.token=sqa_3deabbfd8cb8ecf1a2b70f35fdb2c9917f8cba89'''
+\\   -Dsonar.projectKey=Petclinic 
+  
+\\ -Dsonar.host.url=http://172.31.6.113:9000/ 
+  \\ -Dsonar.token=sqa_3deabbfd8cb8ecf1a2b70f35fdb2c9917f8cba89'''
       }
     }
 
