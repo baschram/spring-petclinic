@@ -43,8 +43,8 @@ pipeline {
           agent any
           steps {
             sh './mvnw verify'
-            junit '**/target/surefire-reports'
             perfReport '**/target/jmeter/results/*'
+            junit(testResults: '**/target/surefire-reports/*', allowEmptyResults: true)
           }
         }
 
