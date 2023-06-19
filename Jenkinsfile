@@ -50,6 +50,12 @@ pipeline {
           }
         }
 
+        stage('') {
+          steps {
+            junit '**/target/surefire-reports/'
+          }
+        }
+
       }
     }
 
