@@ -33,14 +33,24 @@ pipeline {
     stage('QA') {
       parallel {
         stage('Deploy') {
-          agent any
+          agent {
+            node {
+              label 'test'
+            }
+
+          }
           steps {
             sh './mvnw spring-boot:run </dev/null &>/dev/null &'
           }
         }
 
         stage('Integration and Performance Tests') {
-          agent any
+          agent {
+            node {
+              label 'test'
+            }
+
+          }
           steps {
             sh './mvnw verify'
             perfReport '**/target/jmeter/results/*'
