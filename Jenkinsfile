@@ -14,7 +14,7 @@ pipeline {
 
 
 
--Dsonar.projectKey=Petclinic   -Dsonar.login=sqp_b54fc4a820a0650feb6970e8a850ee16b20b9969'''
+-Dsonar.projectKey=Petclinic -Dsonar.login=sqp_333d8be556cbc0a960d0a886641618ecff68d8f6'''
       }
     }
 
