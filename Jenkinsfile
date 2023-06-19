@@ -13,7 +13,7 @@ pipeline {
 \\   -Dsonar.projectKey=spring-petclinic 
   
 \\ -Dsonar.host.url=http://172.31.6.113:9000/ 
-  \\ -Dsonar.user=admin -Dsonar.password=password'''
+  \\ -Dsonar.login=admin -Dsonar.password=password'''
       }
     }
 
