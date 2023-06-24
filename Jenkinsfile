@@ -56,7 +56,7 @@ pipeline {
           }
           steps {
             sh './mvnw verify'
-            junit(testResults: '**/target/surefire-reports', allowEmptyResults: true)
+            junit '**/target/surefire-reports/'
             perfReport '**/target/jmeter/results/*'
           }
         }
