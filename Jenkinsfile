@@ -43,7 +43,7 @@ pipeline {
 
           }
           steps {
-            sh './mvnw spring-boot:run </dev/null &>/dev/null &'
+            sh './mvnw spring-boot:run < /dev/null'
           }
         }
 
