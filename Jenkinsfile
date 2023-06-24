@@ -56,7 +56,7 @@ pipeline {
           }
           steps {
             sh './mvnw verify'
-            junit(testResults: '**/target/surefire-reports/*', allowEmptyResults: true)
+            junit(testResults: '/home/ubuntu/workspace/spring-petclinic_my-pipeline/target/surefire-reports/*', allowEmptyResults: true)
             perfReport '**/target/jmeter/results/*'
           }
         }
